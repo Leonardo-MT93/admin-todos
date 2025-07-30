@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto Todo API con Next.js y Prisma
 
-## Getting Started
+Este proyecto es una API para la gestión de tareas (todos), desarrollada con **Next.js** (App Router) y **Prisma** como ORM para una base de datos PostgreSQL. Permite crear, leer, actualizar, eliminar y poblar tareas de ejemplo en la base de datos.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tabla de Contenidos
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Características](#características)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación](#instalación)
+- [Configuración de la Base de Datos](#configuración-de-la-base-de-datos)
+- [Comandos Útiles](#comandos-útiles)
+- [Endpoints de la API](#endpoints-de-la-api)
+- [Modelo de Datos](#modelo-de-datos)
+- [Notas de Desarrollo](#notas-de-desarrollo)
+- [Licencia](#licencia)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Características
 
-## Learn More
+- API RESTful para la gestión de tareas.
+- Endpoint para poblar la base de datos con datos de ejemplo (`/api/seed`).
+- Uso de Prisma Client para operaciones eficientes sobre la base de datos.
+- Separación de lógica por rutas y módulos.
+- Listo para desarrollo y producción.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologías Utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/) (App Router)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estructura del Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+La estructura principal del proyecto es la siguiente..
+
+
