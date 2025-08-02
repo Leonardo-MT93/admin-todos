@@ -7,7 +7,7 @@ const sleep = ( seconds: number): Promise<boolean> => {
 
 export const updateTodo = async (id: string, complete: boolean):Promise<Todo | null> => {
 
-    await sleep(2);
+    // await sleep(2);
     const body = { complete };
 
     const todo = await fetch(`/api/todos/${id}`, {
