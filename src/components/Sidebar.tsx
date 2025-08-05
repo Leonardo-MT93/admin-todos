@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CiLogout } from "react-icons/ci";
 import logo from "../assets/next.svg";
 import { SidebarItem } from "./SidebarItem";
-import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from "react-icons/io5";
+import { IoBasketballOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from "react-icons/io5";
 
 const menuItems = [
   {
@@ -20,6 +20,16 @@ const menuItems = [
     icon: <IoListOutline size={30} />,
     path: "/dashboard/server-todos",
     title: "Server Actions",
+  },
+  {
+    icon: <IoCodeWorkingOutline size={30} />,
+    path: "/dashboard/cookies",
+    title: "Cookies",
+  },
+  {
+    icon: <IoBasketballOutline size={30} />,
+    path: "/dashboard/products",
+    title: "Products",
   },
   
   
