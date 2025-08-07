@@ -4,6 +4,8 @@ export const revalidate = 0;
 import prisma from "@/lib/prisma";
 import TodosGrid from "@/todos/components/TodosGrid";
 import { NewTodo } from "@/todos/components/newTodo";
+import { getUserServerSession } from "@/auth/actions/auth-actions";
+import { redirect } from "next/navigation";
 // import { useEffect } from "react";
 
 export const metadata = {
@@ -14,18 +16,14 @@ export const metadata = {
 
 export default async function ServerTodosPage() {
 
-    // useEffect(() => {
-    //     fetch('/api/todos')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
-    // }, []);
+    const user = await getUserServerSession()   
 
-    const todos = await prisma.todo.findMany({ orderBy: { createdAt: "asc" } });
+    if (!user) {
+        redirect("/api/auth/signin")
+    }
+
+
+    const todos = await prisma.todo.findMany({ where: { userId: user?.id }, orderBy: { createdAt: "asc" } });
 
     return (
         <>

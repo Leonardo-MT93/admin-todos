@@ -1,3 +1,4 @@
+import { getUserServerSession } from "@/auth/actions/auth-actions";
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { todo } from "node:test";
@@ -11,15 +12,23 @@ interface Todo {
     id: string;
     description: string;
     complete: boolean;
+    userId: string;
 }
 
 const getTodo  = async ( id: string ):Promise<Todo | null> => {
+    const user = await getUserServerSession()
+    if (!user) {
+        return null;
+    }
 
 
     const todo = await prisma.todo.findFirst({
         where: { id: id },
     });
     if (!todo) {
+        return null;
+    }
+    if(todo?.userId !== user.id) {
         return null;
     }
     return todo;
